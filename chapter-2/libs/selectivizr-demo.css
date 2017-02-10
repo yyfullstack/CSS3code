@@ -1,0 +1,29 @@
+@charset "utf-8";
+#test span[title] {
+    font-weight: bold;
+    color: #ff3300;
+}
+
+#test span:nth-child(4) {
+    background: #34538b;
+    color: #fff;
+}
+
+#test span:first-child {
+    border-top: 2px solid #34538b;
+    border-bottom: 2px solid orange;
+    font-style: oblique;
+}
+
+#test span:last-child {
+    text-decoration: line-through;
+    border: 1px solid #a0b3d6;
+}
+
+#test span:empty {
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+    background: #63C;
+    vertical-align: middle;
+}

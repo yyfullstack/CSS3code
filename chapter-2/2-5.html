@@ -1,0 +1,37 @@
+﻿<!--
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>语言伪类选择器运用</title>
+	<style type="text/css">
+		:lang(en) {
+			quotes:'"' '"';
+		}
+		:lang(en) q {background: red;}
+	</style>
+</head>
+<body>
+<p>WWF's goal is to: 
+<q cite="http://www.wwf.org">
+build a future where people live in harmony with nature
+</q> we hope they succeed.</p>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8" />
+	<title>CSS参考手册</title>
+	<style>
+		q:lang(en) { quotes: '[' ']' "<" ">";}
+		q:lang(zh-cn) { quotes: "«" "»" '"' '"' ;}
+		/*针对IE7*/
+		p[lang|="zh"] { background-color: red}
+	</style>
+</head>
+<body>
+<p lang="en"><q>Quote me <q>Quote me</q> Quote me!</q></p>
+<p lang="zh-cn"><q>Quote me <q>Quote me</q> Quote me!</q></p>
+</body>
+</html>

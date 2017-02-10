@@ -1,0 +1,149 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>css画册演示</title>
+    <style type="text/css">
+        body, figure {
+            margin: 0;
+        }
+
+        figcaption {
+            display: block;
+            font-weight: bold;
+            padding: 1em 0;
+        }
+
+        .gallery {
+            position: relative;
+        }
+
+        .gallery > .item {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 300px;
+            text-align: center;
+            -webkit-transition: opacity .5s;
+            -o-transition: opacity .5s;
+            transition: opacity .5s;
+        }
+
+        .gallery > .item:first-of-type {
+            position: static;
+            opacity: 1;
+            background-color: #0099FF;
+        }
+
+        .gallery > .item:nth-of-type(2) {
+            background-color: #00CC33;
+        }
+
+        .gallery > .item:last-of-type {
+            background-color: #CC6600;
+        }
+
+        .gallery > .controls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .gallery > .control-operator {
+            display: none;
+        }
+
+        .gallery .control-button {
+            display: inline-block;
+            margin: 0 .02em;
+            font-size: 3em;
+            text-align: center;
+            text-decoration: none;
+            -webkit-transition: color .1s;
+            -o-transition: color .1s;
+            transition: color .1s;
+        }
+
+        .gallery > .control-operator:target ~ .item {
+            opacity: 0;
+        }
+
+        .gallery > .control-operator:nth-of-type(1):target ~ .item:nth-of-type(1) {
+            opacity: 1;
+        }
+
+        .gallery > .control-operator:nth-of-type(2):target ~ .item:nth-of-type(2) {
+            opacity: 1;
+        }
+
+        .gallery > .control-operator:nth-of-type(3):target ~ .item:nth-of-type(3) {
+            opacity: 1;
+        }
+
+        /* a 按钮的样式 */
+        .gallery .control-button {
+            color: #ccc;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .gallery .control-button:first-of-type {
+            color: white;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .gallery .control-button:hover {
+            color: white;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .gallery .control-operator:target ~ .controls .control-button {
+            color: #ccc;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .gallery .control-operator:target ~ .controls .control-button:hover {
+            color: white;
+            color: rgba(255, 255, 255, .8);
+        }
+
+        .gallery .control-operator:nth-of-type(1):target ~ .controls .control-button:nth-of-type(1),
+        .gallery .control-operator:nth-of-type(2):target ~ .controls .control-button:nth-of-type(2),
+        .gallery .control-operator:nth-of-type(3):target ~ .controls .control-button:nth-of-type(3) {
+            color: white;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="gallery">
+    <div id="gallery-1" class="control-operator"></div>
+    <div id="gallery-2" class="control-operator"></div>
+    <div id="gallery-3" class="control-operator"></div>
+
+    <figure class="item">
+        <figcaption>B</figcaption>
+    </figure>
+
+    <figure class="item">
+        <figcaption>G</figcaption>
+    </figure>
+
+    <figure class="item">
+        <figcaption>R</figcaption>
+    </figure>
+
+    <div class="controls">
+        <a href="#gallery-1" class="control-button">•</a>
+        <a href="#gallery-2" class="control-button">•</a>
+        <a href="#gallery-3" class="control-button">•</a>
+    </div>
+</div>
+
+</body>
+</html>

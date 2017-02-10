@@ -1,0 +1,591 @@
+
+
+/*
+html5doctor.com Reset Stylesheet
+v1.4.1
+2010-03-01
+Author: Richard Clark - http://richclarkdesign.com
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary {
+    display:block;
+}
+
+ul, dl {
+    list-style:none;
+    width:100%;
+}
+h1, h2, h3, h4 {
+    font-weight:lighter;
+}
+a {
+    text-decoration:none;
+}
+/* end reset */
+
+
+
+/* font face */
+
+@font-face {
+    font-family: 'Chunk';
+    src: url('fonts/chunkfive-webfont.eot');
+    src: local('?'), url('fonts/chunkfive-webfont.woff') format('woff'), url('fonts/chunkfive-webfont.ttf') format('truetype'), url('fonts/chunkfive-webfont.svg#webfontAzRiHJA9') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TheanoModernRegular';
+    src: url('fonts/TheanoModern-Regular-webfont.eot');
+    src: local('?'), url('fonts/TheanoModern-Regular-webfont.woff') format('woff'), url('fonts/TheanoModern-Regular-webfont.ttf') format('truetype'), url('fonts/TheanoModern-Regular-webfont.svg#webfontObn1Betk') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ShareRegular';
+    src: url('fonts/Share-Regular-webfont.eot');
+    src: local('?'), url('fonts/Share-Regular-webfont.woff') format('woff'), url('fonts/Share-Regular-webfont.ttf') format('truetype'), url('fonts/Share-Regular-webfont.svg#webfonto0TCLpfd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*main bits */
+html {
+    overflow:auto;
+}
+body {
+    color:#000;
+    font-family: TheanoModernRegular, Georgia, Times, serif;
+    font-size:16px !important;
+    background:url(images/greynoise.jpg) fixed;
+    overflow:auto;
+}
+
+div#wrapper {
+    width:970px;
+    margin:0 auto;
+    padding:0 5px;
+}
+
+/* header section */
+
+img.awards {
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+header {
+    height:200px;
+    width:970px;
+    border-bottom:solid 1px #000;
+}
+header h2 {
+    display:block;
+    width:150px;
+    height:150px;
+    background:#000;
+    -moz-border-radius:75px;
+    -webkit-border-radius:75px;
+    border-radius:75px;
+    margin:25px 0 0 0;
+    float:left;
+    position:relative;
+}
+h2 span {
+    display:block;
+    padding:12px 0 0 10px;
+    width:50px;
+    height:48px;
+    background:#fff568;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    position:absolute;
+    top:45px;
+    left:45px;
+    font-family:ShareRegular, sans-serif;
+    font-size:1.75em;
+}
+h1 {
+    float:right;
+    font-family: Chunk, serif;
+    margin:60px 0 0 0;
+    font-size:5.1em;
+}
+
+/* about bit */
+
+section {
+    width:970px;
+    padding:20px 0 30px 0;
+    border-bottom:solid 1px #000;
+    float:left;
+}
+section p {
+    float:left;
+    -webkit-column-count: 2;
+    -webkit-column-width: 460px;
+    -webkit-column-gap: 45px;
+    -webkit-column-rule: 1px solid #000;
+    -moz-column-count: 2;
+    -moz-column-width: 460px;
+    -moz-column-gap: 45px;
+    -moz-column-rule: 1px solid #000;
+    column-count: 2;
+    column-width: 460px;
+    column-gap: 45px;
+    column-rule: 1px solid #000;
+}
+
+/* genre section */
+
+section h3 {
+    float:left;
+    font-family:ShareRegular, sans-serif;
+    font-size:1.75em;
+    width:100%;
+    position:relative;
+    padding:0 0 0 70px;
+    margin:50px 0 10px 0;
+}
+h3 span {
+    display:block;
+    padding:12px 0 0 0;
+    width:60px;
+    height:48px;
+    background:#000;
+    color:#f4f4f6;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+    text-align:center;
+    position:absolute;
+    left:0px;
+    top:-11px;
+}
+ul#genre	{
+    width:100%;
+    height:200px;
+    display:block;
+    margin:35px 0 0 0;
+    float:left;
+}
+ul#genre li {
+    height:100%;
+    display:inline;
+    float:left;
+}
+ul#genre li:nth-of-type(1) {
+    width:32.9%;
+    background:url(images/orangenoise.jpg);
+}
+ul#genre li:nth-of-type(2) {
+    width:15.2%;
+    background:url(images/bluenoise.jpg);
+}
+ul#genre li:nth-of-type(3) {
+    width:13.1%;
+    background:url(images/greennoise.jpg);
+}
+ul#genre li:nth-of-type(4) {
+    width:10.7%;
+    background:url(images/yellownoise.jpg);
+}
+ul#genre li:nth-of-type(5) {
+    width:6.6%;
+    background:url(images/pinknoise.jpg);
+}
+ul#genre li:nth-of-type(6) {
+    width:6%;
+    background:url(images/rednoise.jpg);
+}
+ul#genre li:nth-of-type(7) {
+    width:6%;
+    background:url(images/brownnoise.jpg);
+}
+ul#genre li:nth-of-type(8) {
+    width:5%;
+    background:url(images/purplenoise.jpg);
+}
+ul#genre li:nth-of-type(9) {
+    width:4.5%;
+    background:url(images/beigenoise.jpg);
+}
+
+ul.genre {
+    float:left;
+    margin:30px 0 50px 0;
+}
+ul.genre li {
+    padding:3px 0 0 40px;
+    position:relative;
+    margin:0 30px 20px 0;
+    display:inline;
+    float:left;
+}
+ul.genre li span {
+    width:30px;
+    height:30px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15x;
+    display:block;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+span.orange {
+    background:url(images/orangenoise.jpg);
+}
+span.blue {
+    background:url(images/bluenoise.jpg);
+}
+span.green{
+    background:url(images/greennoise.jpg);
+}
+span.yellow {
+    background:url(images/yellownoise.jpg);
+}
+span.pink {
+    background:url(images/pinknoise.jpg);
+}
+span.red {
+    background:url(images/rednoise.jpg);
+}
+span.brown {
+    background:url(images/brownnoise.jpg);
+}
+span.purple {
+    background:url(images/purplenoise.jpg);
+}
+span.beige {
+    background:url(images/beigenoise.jpg);
+}
+
+/* origin section */
+
+ul.origin {
+    float:left;
+    margin:35px 0 50px 0;
+    width:100%;
+}
+ul.origin li {
+    height:60px;
+    float:left;
+    clear:both;
+    position:relative;
+    margin: 0 0 10px 0;
+}
+ul.origin span {
+    position:absolute;
+    top:20px;
+    left:100%;
+    margin-left:20px;
+}
+ul.origin li:nth-of-type(1) {
+    width:73.2%;
+    background:url(images/orangenoise.jpg);
+}
+ul.origin li:nth-of-type(2) {
+    width:13.1%;
+    background:url(images/bluenoise.jpg);
+}
+ul.origin li:nth-of-type(3) {
+    width:8.6%;
+    background:url(images/greennoise.jpg);
+}
+ul.origin li:nth-of-type(4) {
+    width:2.1%;
+    background:url(images/yellownoise.jpg);
+}
+ul.origin li:nth-of-type(5) {
+    width:1.5%;
+    background:url(images/pinknoise.jpg);
+}
+ul.origin li:nth-of-type(6) {
+    width:0.5%;
+    background:url(images/rednoise.jpg);
+}
+ul.origin li:nth-of-type(7) {
+    width:0.5%;
+    background:url(images/brownnoise.jpg);
+}
+ul.origin li:nth-of-type(8) {
+    width:0.5%;
+    background:url(images/purplenoise.jpg);
+}
+
+/* label section */
+
+ul.label	{
+    width:100%;
+    margin:35px 0 50px 0;
+    float:left;
+    position:relative;
+    height:404px;
+}
+ul.label li {
+    display:inline;
+    position:absolute;
+}
+ul.label li:nth-of-type(1) {
+    border-color: #f5ee62 transparent transparent transparent;
+    border-style:solid;
+    border-width:207px;
+    height:0px;
+    width:0px;
+    top:0px;
+    left:0px;
+}
+ul.label li:nth-of-type(2) {
+    border-color: #71d2fc transparent transparent transparent;
+    border-style:solid;
+    border-width:149px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-149px;
+    left:197px;
+}
+ul.label li:nth-of-type(3) {
+    border-color: #fff transparent transparent transparent;
+    border-style:solid;
+    border-width:149px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-149px;
+    left:346px;
+}
+ul.label li:nth-of-type(4) {
+    border-color: #000 transparent transparent transparent;
+    border-style:solid;
+    border-width:123px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-123px;
+    left:495px;
+}
+ul.label li:nth-of-type(5) {
+    border-color: #f76625 transparent transparent transparent;
+    border-style:solid;
+    border-width:114px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-114px;
+    left:618px;
+}
+ul.label li:nth-of-type(6) {
+    border-color: #ec1a23 transparent transparent transparent;
+    border-style:solid;
+    border-width:104px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-104px;
+    left:732px;
+}
+ul.label li:nth-of-type(7) {
+    border-color: #3db84e transparent transparent transparent;
+    border-style:solid;
+    border-width:50px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-50px;
+    left:846px;
+}
+ul.label li:nth-of-type(8) {
+    border-color: #ec538b transparent transparent transparent;
+    border-style:solid;
+    border-width:44px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-44px;
+    left:886px;
+}
+ul.label li:nth-of-type(9) {
+    border-color: #7d7d7d transparent transparent transparent;
+    border-style:solid;
+    border-width:15px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-15px;
+    left:930px;
+}
+ul.label li:nth-of-type(10) {
+    border-color: #692693 transparent transparent transparent;
+    border-style:solid;
+    border-width:10px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-10px;
+    left:945px;
+}
+ul.label li:nth-of-type(11) {
+    border-color: #A0522D transparent transparent transparent;
+    border-style:solid;
+    border-width:10px;
+    height:0px;
+    width:0px;
+    top:50%;
+    margin-top:-10px;
+    left:955px;
+}
+
+/* decade section */
+
+ul.decade {
+    float:left;
+    width:100%;
+    height:556px;
+    margin:35px 0 50px 0;
+    position:relative;
+}
+ul.decade li {
+    position:absolute;
+    text-align:center;
+}
+ul.decade li:nth-of-type(1) {
+    width:46px;
+    height:33px;
+    padding:13px 0 0 0;
+    font-size:0.8em;
+    -moz-border-radius:23px;
+    -webkit-border-radius:23px;
+    border-radius:23px;
+    top:0px;
+    left:924px;
+    background:url(images/orangenoise.jpg);
+}
+ul.decade li:nth-of-type(2) {
+    width:556px;
+    height:336px;
+    padding:220px 0 0 0;
+    font-size:4em;
+    -moz-border-radius:278px;
+    -webkit-border-radius:278px;
+    border-radius:278px;
+    top:0px;
+    left:0px;
+    background:url(images/bluenoise.jpg);
+}
+ul.decade li:nth-of-type(3) {
+    width:378px;
+    height:248px;
+    padding:130px 0 0 0;
+    font-size:4em;
+    -moz-border-radius:189px;
+    -webkit-border-radius:189px;
+    border-radius:189px;
+    top:0px;
+    left:556px;
+    background:url(images/greennoise.jpg);
+}
+
+/* oldest - newest section */
+
+ul.oldest {
+    width:100%;
+    margin:150px 0 140px 0;
+    float:left;
+    position:relative;
+    height:1px;
+    border-top:dashed 1px #000;
+}
+ul.oldest li {
+    width:200px;
+    height:140px;
+    padding:60px 0 0 0;
+    -moz-border-radius:100px;
+    -webkit-border-radius:100px;
+    border-radius:100px;
+    top:-100px;
+    display:block;
+    position:absolute;
+    text-align:center;
+    font-size:3em;
+}
+ul.oldest li:nth-of-type(1) {
+    background:url(images/pinknoise.jpg);
+}
+ul.oldest li:nth-of-type(2) {
+    background:url(images/yellownoise.jpg);
+    right:0px;
+}
+
+ul.newest {
+    float:left;
+    position:relative;
+    margin:40px 0 40px 0;
+}
+ul.newest li {
+    padding:5px 0 0 40px;
+    margin:0 0 10px 0;
+    position:relative;
+}
+ul.newest span {
+    width:30px;
+    height:30px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    border-radius:15x;
+    display:block;
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+span.ella {
+    background:url(images/pinknoise.jpg);
+}
+span.rock {
+    background:url(images/yellownoise.jpg);
+}
+
+
+/* colophon */
+
+h4 {
+    float:left;
+    font-family:ShareRegular, sans-serif;
+    font-size:1.75em;
+    margin:50px 0 10px 0;
+}
+ul.colophon {
+    float:left;
+    clear:both;
+    margin:10px 0 100px 0;
+}
+a {
+    color:#f76625;
+}
+a:hover {
+    color:#000;
+}

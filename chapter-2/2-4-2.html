@@ -1,0 +1,297 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Fun with :target demo - Virtuelvis</title>
+    <style type="text/css">
+        a, a:link, a:visited {
+            color: #113;
+            text-decoration: underline;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 83%;
+            font-family: Arial, Verdana, sans-serif;
+            background: #A8AED8; /* black url(oldfield.jpg) no-repeat fixed 61% 95%; */
+            color: #787;
+        }
+
+        div.window {
+            background: #eee;
+            opacity: 0.66;
+            color: #222;
+            position: absolute;
+            margin: 0px;
+            padding: 0px;
+            z-index: 1;
+        }
+
+        div.windowcontent {
+            margin: 0;
+            padding: 1em;
+        }
+
+        p {
+            margin: 0 0 1em 0;
+        }
+
+        div.window:target {
+            opacity: 1;
+            z-index: 7;
+        }
+
+        div.window h2 {
+            background: white;
+            color: #333;
+            margin: 0;
+            font-family: Arial, Verdana, sans-serif;
+            font-size: 1.1em;
+            letter-spacing: 0.1em;
+            padding: 0.1em;
+        }
+
+        div.appbar {
+            position: absolute;
+            bottom: 30px;
+            left: 18%;
+            right: 18%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 72px;
+            padding: 0;
+            background: white;
+            border: 1px solid black;
+        }
+
+        div.appbar ul {
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0;
+            border-collapse: collapse;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        div.appbar ul li {
+            display: table-cell;
+            border-collapse: collapse;
+            width: 80px;
+            margin: 0;
+            color: #555;
+            padding: 0;
+            text-align: center;
+        }
+
+        div.appbar ul li:hover img {
+            color: black;
+        }
+
+        img, a:link img {
+            border: none;
+        }
+
+        div.appbar ul li a, div.appbar ul li a:link, div.appbar ul li a:visited {
+            font-weight: 900;
+            font-family: "Trebuchet MS";
+            width: 100%;
+            font-size: 11px;
+            display: block;
+            padding: 0;
+            height: 64px;
+            padding: 4px 0 4px 0;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        div.appbar ul li a img {
+            opacity: 0.5;
+        }
+
+        div.appbar ul li a:hover img {
+            opacity: 1;
+        }
+
+        span.description {
+            display: none;
+        }
+
+        h1 {
+            z-index: 0;
+            font-size: 300%;
+            color: #333;
+            position: absolute;
+            bottom: 115px;
+            margin: 0 -15px 0 0;
+            padding: 0;
+            vertical-align: bottom;
+            right: 18%;
+            font-variant: small-caps;
+        }
+
+        #contact {
+            right: 125px;
+            width: 230px;
+            left: auto;
+            top: 150px;
+            height: auto;
+            bottom: auto;
+        }
+
+        #recycle {
+            top: 90px;
+            width: 250px;
+            left: 30px;
+            right: auto;
+            bottom: auto;
+            height: auto;
+        }
+
+        #front {
+            top: 20px;
+            bottom: auto;
+            left: 20%;
+            width: 60%;
+            height: auto;
+        }
+
+    </style>
+    <script type="text/javascript">
+        var capX, capY;
+        var capture = false;
+
+        function init() {
+            var d = document.getElementsByTagName('div');
+
+            // Set up event listener for mouseover on the viewport.
+            document.getElementsByTagName('html')[0].addEventListener("mousemove", doMove, true);
+            for (i = 0; i < d.length; i++) {
+                if (d[i].className == "window") {
+                    // add event listener for when you mouse down over a window.
+                    d[i].addEventListener("mousedown", eFocus, false);
+                    // Event listener for mousedown on a "window" header. To enable dragging.
+                    d[i].getElementsByTagName('h2')[0].addEventListener("mousedown", startMove, false);
+                    // Event listener to release window move.
+                    d[i].getElementsByTagName('h2')[0].addEventListener("mouseup", endMove, false);
+                }
+            }
+        }
+
+        function eFocus(ev) {
+            // Give focus to a window when it is clicked.
+            m = ev.currentTarget;
+
+            window.location.hash = m.id;
+            return false;
+        }
+
+
+        function startMove(ev) {
+            // Enable window dragging.
+            var m = ev.currentTarget.parentNode;
+            // Find the offset values, so that the window doesn't
+            // "jump" when moved
+            if (!capX) {
+                capX = ev.clientX - m.offsetLeft;
+            }
+            if (!capY) {
+                capY = ev.clientY - m.offsetTop;
+            }
+            capture = ev.currentTarget.parentNode;
+            return true;
+        }
+
+
+        function endMove(ev) {
+            // End window dragging
+            capX = false;
+            capY = false;
+            capture = false;
+            return true;
+        }
+
+        function doMove(ev) {
+            // If the startMove has enabled capture, this window
+            // will enable moving of windows.
+            if (capture) {
+                var m = ev.currentTarget;
+                capture.style.left = (ev.clientX - capX) + "px";
+                capture.style.top = (ev.clientY - capY) + "px";
+            }
+        }
+
+        window.onload = init;
+    </script>
+</head>
+<body>
+<h1>CSS3 fun</h1>
+<div class="appbar">
+    <ul>
+        <li><a href="#front"><img src="48/news-reader-48.png"/><br/>Index</a></li>
+        <li><a href="#contact"><img src="48/inbox-48.png"/><br/>Contact</a></li>
+        <li><a href="#recycle"><img src="48/gnome-fs-trash-empty.png"/><br/>Recycle?</a></li>
+        <!--<li><a href="http://virtuelvis.com/"><img src="48/gnome-terminal.png"/><br/>virtuelvis.com</a></li>-->
+    </ul>
+</div>
+
+<div class="window" id="front">
+    <h2>CSS3 fun :target</h2>
+    <div class="windowcontent">
+        <p>This is just a little experiment to see if a window-like behavior could be achieved without any use of
+            Javascript.</p>
+        <p>Here, the CSS3 pseudo-class <a href="http://www.w3.org/TR/css3-selectors/#target-pseudo">:target</a> to
+            change the window stacking order, so the active window is the topmost window. Try clicking on one of the
+            three first icons below, and if your browser supports <code>:target</code>, the appropriate window should
+            light up.</p>
+        <p>This demo has been tested in <a
+                href="http://my.opera.com/desktopteam/blog/2007/09/04/go-and-get-opera-9-5-alpha-3">Opera 9.50 Alpha
+            1</a>, <a href="http://www.mozilla.org/">Mozilla</a> (including Firefox), and Safari.</p>
+        <h3>New: Now with draggable windows</h3>
+        <p>I've made added a few lines of script that should enable you to drag the windows around to your own
+            liking.</p>
+        <p>Since the windows are transparent, the performance is rather abysmal on slower computers, but I'm keeping it
+            this way, since I just wanted to show that &#8220;it can be done&#8221;.</p>
+        <p>The script is 58 lines, with comments, and should be easy enough to understand if you're Javascript
+            savvy.</p>
+    </div>
+</div>
+
+<div class="window" id="contact">
+    <h2>Comments</h2>
+    <div class="windowcontent">
+        <p>If you want to contact me for whatever reason, read my <a href="http://virtuelvis.com/about.html">about
+            page</a>.
+        </p>
+        <p>If you have any questions specifically regarding this demonstration, ask in the <a
+                href="http://virtuelvis.com/2003/07/fun-with-target">blog entry related to this demo</a>.</p>
+    </div>
+</div>
+
+<div class="window" id="recycle">
+    <h2>Recycle?</h2>
+    <div class="windowcontent">
+        <p>There have been several sources of inspirations for this little experiment:</p>
+        <ul>
+            <li>The icons are borrowed from several <a href="http://gnome.org/">Gnome</a> themes.</li>
+            <li>Design inspiration should be fairly obvious, although the <a href="http://www.apple.com/">Apple</a>
+                designers do a much better job at this than me.
+            </li>
+            <li><a href="http://www.moronicbajebus.com/">Seamus P. H. Leahy</a> has a great page with various <a
+                    href="http://www.moronicbajebus.com/playground/cssplay/">CSS experiments</a>.
+            </li>
+            <li>Musical inspiration provided by Mike Oldfield, Kraftwerk and Prodigy.</li>
+        </ul>
+        <p>If you wish to use the techniques on this page for whatever reason, you are free to do so without asking.</p>
+    </div>
+</div>
+
+​
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>Pure CSS image gallery</title>
+    <style type="text/css">
+        li {
+            position: absolute;
+            background: rgba(0, 0, 0, .5);
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: none;
+        }
+
+        li:target {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        li img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -150px;
+            display: block;
+        }
+
+    </style>
+    <!--
+        分别通过链接：
+        http://localhost:8888/code/chapter-2/2-4-4.html#flower
+        http://localhost:8888/code/chapter-2/2-4-4.html#squirrel
+        来显示相应的内容
+    -->
+</head>
+<body>
+<ul>
+    <li id="flower"><a href="#"><img class="alignnone size-medium wp-image-161" title="IMG_0251"
+                                     src="slide1.png"
+                                     alt="" width="300" height="200"></a></li>
+    <li id="squirrel"><a href="#"><img class="alignnone size-medium wp-image-160" title="IMG_8806"
+                                       src="slide2.png"
+                                       alt="" width="300" height="200"></a></li>
+</ul>
+</body>
+</html>
