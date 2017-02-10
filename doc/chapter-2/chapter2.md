@@ -103,14 +103,15 @@
     E:first-child        作为父元素的第一个子元素的元素E，与E:nth-child(1) 等同，                                                                        IE9+
     E:last-child         作为父元素的最后一个子元素的元素E，与E:nth-last-child(1) 等同，                                                                 IE9+
     E:root               选择匹配元素E所在文档的根元素，在HTML文档中，根元素始终是html，此时该选择器与html类型选择器匹配的内容相同                       IE9+
-    E F:nth-child(n)     选择父元素E的第n个子元素F，其中n可以是整数(1,2,3)、关键字(odd,even)、可以是公式(2n+1,-n+5),而且参数n的起始值为0，而不是1            IE9+
-    E F:nth-last-child(n)选择父元素E的倒数第n个子元素F，此选择器与 E F:nth-child(n)选择器计算顺序刚好相反，单使用方法都是一样的，其中:nth-last-child(1)始终匹配最后一个元素，与E:last-child等同  IE9+    
-    E:nth-of-type(n)     选择父元素内具有指定类型的第n个E元素                           IE9+
-    E:nth-last-of-type(n)选择父元素内具有指定类型的倒数第n个E元素                           IE9+
-    E:first-of-type(n)   选择父元素内具有指定类型的第一个E元素， 与E:nth-of-type(1) 等同                           IE9+ 
-    E:last-of-type(n)    选择父元素内具有指定类型的最后一个E元素， 与E:nth-last-of-type(1) 等同                           IE9+
-    E:only-child         选择父元素只包含一个子元素，且该子元素匹配E元素                           IE9+
-    E:only-of-type       选择父元素只包含一个同类型的子元素， 且该子元素匹配E元素                           IE9+
+    E F:nth-child(n)     选择父元素E的第n个子元素F，其中n可以是整数(1,2,3)、关键字(odd,even)、可以是公式(2n+1,-n+5),而且参数n的起始值为0，而不是1        IE9+
+    E F:nth-last-child(n)选择父元素E的倒数第n个子元素F，此选择器与 E F:nth-child(n)选择器计算顺序刚好相反，单使用方法都是一样的，
+                            其中:nth-last-child(1)始终匹配最后一个元素，与E:last-child等同                                                               IE9+    
+    E:nth-of-type(n)     选择父元素内具有指定类型的第n个E元素                                                                                            IE9+
+    E:nth-last-of-type(n)选择父元素内具有指定类型的倒数第n个E元素                                                                                        IE9+
+    E:first-of-type(n)   选择父元素内具有指定类型的第一个E元素， 与E:nth-of-type(1) 等同                                                                 IE9+ 
+    E:last-of-type(n)    选择父元素内具有指定类型的最后一个E元素， 与E:nth-last-of-type(1) 等同                                                          IE9+
+    E:only-child         选择父元素只包含一个子元素，且该子元素匹配E元素                                                                                 IE9+
+    E:only-of-type       选择父元素只包含一个同类型的子元素， 且该子元素匹配E元素                                                                        IE9+
     E:empty              选择没有子元素的元素，而且该元素也不包含任何文本节点
     
     以上选择器中，只有:first-child 属于CSS2.1，此外其他的结构伪类选择器都是CSS3中的新特性。
@@ -147,4 +148,44 @@
      “:nth-of-type”选择的是某父元素的子元素，而且这个子元素是指定类型，“:nth-child”虽然常见，但却脆弱，正如前面的例子，随时被其他元素给挤出选择范围。
      而“:nth-of-type”不常见，但是选择某种类型的子元素时，更稳定，更可靠。
             
+####2.9 否定伪类选择器  
+
+    选择器               功能描述                        兼容性
+    E:not(F)            匹配所有除元素F外的元素，        IE9+ 
     
+####2.10 伪元素  
+    伪元素其实在CSS中一直存在，大家平时看到的有：“:first-line”, “:first-letter”, “:before”, “:after”
+    CSS3中对伪元素进行了一定的调整，在以前的基础上增加了一个冒号，也就变成了“::first-line”, “::first-letter”, “::before”, “::after”
+    另外伪元素还增加了一个“::selection”。
+   
+#####2.10.1 伪元素  ::first-letter
+    “::first-letter”用来选择文本块的第一个字母，除非在同一行中包含了一些其他元素。通常用于给文本元素添加排版细节，例如下沉字母或首字母
+#####2.10.2 伪元素  ::first-line
+    “::first-line”的使用和“::first-letter”类似，也常用于文本版本方面，只不过“::first-line”用来匹配元素的第一行文本，可以应用一些
+    特殊的样式，给文本添加一些细微的区别。“::first-line”将匹配block, inline-block, table-caption, table-cell等级别元素的第一行
+#####2.10.3 伪元素  ::before和::after
+    对于“::before”和“::after”来说，并不多见，但“:before”和“:after”，或许大家不会陌生，因为清除浮动就使用这两个伪类
+    “::before”和“::after”不是存在于标记中的内容，而是可以插入额外内容的位置，尽管生成的内容不会成为DOM的一部分，但它同样可以设置样式。
+    要为伪元素生成内容，还需要配合content属性，iconfont都是使用伪元素生成的
+#####2.10.4 伪元素  ::selection
+    “ ::selection”用来匹配突出显示的文本，浏览器默认情况下，选择网站文本是深蓝的背景，白色的字体
+    有的设计需要一个与众不同的效果，此时“ ::selection”就非常实用，不过整个IE中仅有IE9支持。
+    
+####2.11 属性选择器
+    在HTML中，通过各种各样的属性可以给元素增加很多附加的信息， 例如，通过id属性可以将不同的IDV元素进行区分，CSS2中引入了一些属性选择器，
+    CSS3在CSS2的基础上进行扩展了这些属性选择器，支持匹配来定位元素。
+    
+    
+    选择器              功能描述                                                                                       兼容性
+    E[attr]             选择匹配具有属性attr的E元素，其中E可以省略，表示选择定义了attr属性的任意类型的元素              IE7+
+    E[attr=val]         选择匹配具有属性attr的E元素，并且attr属性值为val（其中val区别大小写），同样E可以省略，
+                        表示选择定义了attr属性值为val的任意类型的元素                                                   IE7+
+    E[attr|=val]        选择匹配具有属性attr的E元素，attr属性值是一个具有val或者以val-开始的属性值。常用于lang属性（例如lang="en-us"）
+                        例如p[lang!=en]将匹配定义为英语的任何段落，无论是英式英语还是美式英语                           IE7+
+    E[attr~=val]        选择匹配E元素，且E元素定义了属性attr，attr属性值具有多个空格分隔的值，其中一个值等于val。例如 “.info[title~=more]”
+                        将匹配元素具有类名info，而且这个元素设置了一个属性title，同时title属性值包含了“ more”的任何元素。
+                        如：<a class="info" title="more info" >Click Me</a>                                             IE7+
+    E[attr*=val]        选择匹配E元素，且E元素定义了属性attr，attr属性值任意位置包含了“val”，换句话说，
+                        字符串val与属性值中的任意位置相匹配                                                             IE7+
+    E[attr^=val]        选择匹配E元素，且E元素定义了属性attr，attr属性值以val开头的任意字符串                           IE7+
+    E[attr$=val]        选择匹配E元素，且E元素定义了属性attr，attr属性值以val结尾的任意字符串，刚好与 E[attr^=val]想反  IE7+
