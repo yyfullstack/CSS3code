@@ -77,7 +77,8 @@
 
     目标伪类选择器是动态选择器， 只存在URL指向该匹配元素时，样式效果才会生效
     应用：
-        1）目标伪类选择器来高亮显示脚注：  https://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E6%B5%B7%E7%99%BB%C2%B7%E8%8B%B1%E6%A0%BC%E5%88%A9%E5%B8%8C#cite_note-FOOTNOTEFreehling_200761.E2.80.9396-16
+        1）目标伪类选择器来高亮显示脚注： 
+     https://zh.wikipedia.org/wiki/%E5%A8%81%E5%BB%89%C2%B7%E6%B5%B7%E7%99%BB%C2%B7%E8%8B%B1%E6%A0%BC%E5%88%A9%E5%B8%8C#cite_note-FOOTNOTEFreehling_200761.E2.80.9396-16
         2）高亮显示区块  http://www.red-team-design.com/get-to-know-your-css3-target-pseudo-class
         3) 从相互层叠的盒容器或图片中突显其中一项  http://virtuelvis.com/gallery/css3/target/interface.html
         4) tabs 效果  https://css-tricks.com/examples/CSSTabs/
@@ -93,12 +94,9 @@
 
     对于ie6浏览器，给引文元素在不同版本的时候设置不同的类名，例在英文版本下设置类名“.en” ,而在法文版本下设置类名为“.fr”
     对于IE7浏览器，也可以使用ie6的方式，如果不考虑IE6,可以使用属性选择器的“E[foo|'en']”选择器为不同语言版本的引文设置不同样式。
-
     大家也可以通过这种方式为不同语言版本的网站相关元素设置不同的样式，例如改变网站页面的字号， 设置不同的背景图片等。
-
-    语言伪类选择器是根据元素的语言编码匹配元素，这种语言信息必须包含在文档中，或者与文档关联，不能从css指定，为文档指定语言，有两种方法可以表示，
-    如果是html5，可以设置文档的语言：
-    <html lang="en-US">
+    语言伪类选择器是根据元素的语言编码匹配元素，这种语言信息必须包含在文档中，或者与文档关联，不能从css指定，
+    为文档指定语言，有两种方法可以表示，如果是html5，可以设置文档的语言：<html lang="en-US">
     或者手工在文档中指定lang属性，并设置对应的语言值，如：<p lang="fr">
 
 ####2.7 UI元素状态伪类选择器
@@ -159,8 +157,10 @@
            4. 为一个定义列表的条上使用交替样式
            5. 制作图表demo：    http://www.fortherecord.simonfosterdesign.com/
            
-     注意：“:nth-child”选择的是某父元素的子元素，这个子元素并没有指定确切的类型，同时满足两个条件是方能有效果，其一时子元素，其二此子元素刚好处于哪个位置，
-     “:nth-of-type”选择的是某父元素的子元素，而且这个子元素是指定类型，“:nth-child”虽然常见，但却脆弱，正如前面的例子，随时被其他元素给挤出选择范围。
+     注意：“:nth-child”选择的是某父元素的子元素，这个子元素并没有指定确切的类型，同时满足两个条件是方能有效果，其一时子元素，
+     其二此子元素刚好处于哪个位置，
+     “:nth-of-type”选择的是某父元素的子元素，而且这个子元素是指定类型，“:nth-child”虽然常见，但却脆弱，正如前面的例子，
+     随时被其他元素给挤出选择范围。
      而“:nth-of-type”不常见，但是选择某种类型的子元素时，更稳定，更可靠。
             
 ####2.9 否定伪类选择器  
@@ -175,14 +175,16 @@
     另外伪元素还增加了一个“::selection”。
    
 #####2.10.1 伪元素  ::first-letter
-    “::first-letter”用来选择文本块的第一个字母，除非在同一行中包含了一些其他元素。通常用于给文本元素添加排版细节，例如下沉字母或首字母
+    “::first-letter”用来选择文本块的第一个字母，除非在同一行中包含了一些其他元素。通常用于给文本元素添加排版细节，
+    例如下沉字母或首字母
 #####2.10.2 伪元素  ::first-line
-    “::first-line”的使用和“::first-letter”类似，也常用于文本版本方面，只不过“::first-line”用来匹配元素的第一行文本，可以应用一些
-    特殊的样式，给文本添加一些细微的区别。“::first-line”将匹配block, inline-block, table-caption, table-cell等级别元素的第一行
+    “::first-line”的使用和“::first-letter”类似，也常用于文本版本方面，只不过“::first-line”用来匹配元素的第一行文本，
+    可以应用一些    特殊的样式，给文本添加一些细微的区别。“::first-line”将匹配block, inline-block, table-caption, 
+    table-cell等级别元素的第一行
 #####2.10.3 伪元素  ::before和::after
-    对于“::before”和“::after”来说，并不多见，但“:before”和“:after”，或许大家不会陌生，因为清除浮动就使用这两个伪类
-    “::before”和“::after”不是存在于标记中的内容，而是可以插入额外内容的位置，尽管生成的内容不会成为DOM的一部分，但它同样可以设置样式。
-    要为伪元素生成内容，还需要配合content属性，iconfont都是使用伪元素生成的
+    对于“::before”和“::after”来说，并不多见，但“:before”和“:after”，或许大家不会陌生，因为清除浮动就使用这两个
+    伪类“::before”和“::after”不是存在于标记中的内容，而是可以插入额外内容的位置，尽管生成的内容不会成为DOM的一部分，
+    它同样可以设置样式。要为伪元素生成内容，还需要配合content属性，iconfont都是使用伪元素生成的
 #####2.10.4 伪元素  ::selection
     “ ::selection”用来匹配突出显示的文本，浏览器默认情况下，选择网站文本是深蓝的背景，白色的字体
     有的设计需要一个与众不同的效果，此时“ ::selection”就非常实用，不过整个IE中仅有IE9支持。
@@ -196,7 +198,7 @@
 |---|---|---|
 |E[attr]|选择匹配具有属性attr的E元素，其中E可以省略，表示选择定义了attr属性的任意类型的元素|IE7+|
 |E[attr=val]|选择匹配具有属性attr的E元素，并且attr属性值为val（其中val区别大小写），同样E可以省略，表示选择定义了attr属性值为val的任意类型的元素|IE7+|
-|E[attr|=val]|选择匹配具有属性attr的E元素，attr属性值是一个具有val或者以val-开始的属性值。常用于lang属性（例如lang="en-us"）例如p[lang!=en]将匹配定义为英语的任何段落，无论是英式英语还是美式英语|IE7+|
+|E[attr\|=val]|选择匹配具有属性attr的E元素，attr属性值是一个具有val或者以val-开始的属性值。常用于lang属性（例如lang="en-us"）例如p[lang!=en]将匹配定义为英语的任何段落，无论是英式英语还是美式英语|IE7+|
 |E[attr~=val]|选择匹配E元素，且E元素定义了属性attr，attr属性值具有多个空格分隔的值，其中一个值等于val。例如 “.info[title~=more]”将匹配元素具有类名info，而且这个元素设置了一个属性title，同时title属性值包含了“ more”的任何元素。如：<a class="info" title="more info" >Click Me</a>|IE7+|
 |E[attr*=val]|选择匹配E元素，且E元素定义了属性attr，attr属性值任意位置包含了“val”，换句话说，字符串val与属性值中的任意位置相匹配|IE7+|
 |E[attr^=val]|选择匹配E元素，且E元素定义了属性attr，attr属性值以val开头的任意字符串|IE7+|
