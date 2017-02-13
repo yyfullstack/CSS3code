@@ -26,6 +26,13 @@
 |属性值|功能描述|示例代码|效果|
 |---|---|---|---|
 |none|定义无边框|.elm{border:none}|<span class="elm">none</span>|   
+|hidden|与“none”相同，不过应用于表时除外，对于表，hidden用于解决边框冲突|.elm{border:hidden}|<span class="elm">hidden</span>|   
+|dotted|定义点状边框|.elm{border:3px dotted red;}|<span class="elm">dotted</span>|   
+|none|定义无边框|.elm{border:none}|<span class="elm">none</span>|   
+|none|定义无边框|.elm{border:none}|<span class="elm">none</span>|   
+|none|定义无边框|.elm{border:none}|<span class="elm">none</span>|   
+|none|定义无边框|.elm{border:none}|<span class="elm">none</span>|   
+|none|定义无边框|.elm{border:none}|<span class="elm">none</span>|   
  
     
     
