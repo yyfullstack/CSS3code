@@ -71,8 +71,8 @@
     4、图片的排列方式：border-image-repeat。
     
 *border-image-source    
-    >语法：    
-      border-image-source:url(image url);/*image url可以是相对地址也可以是绝对地址*/    
+>语法：    
+>border-image-source:url(image url);/*image url可以是相对地址也可以是绝对地址*/    
           
     border-image-source跟CSS2中background-image属性相似，也是通过url()调用背景图片，图片的路径可以是相对地址也可以是
     绝对地址，当然你不想使用背景图片你也可以把值设置为none，即：border-image:none；其默认值就是none。
