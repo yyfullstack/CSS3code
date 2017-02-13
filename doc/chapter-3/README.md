@@ -70,7 +70,7 @@
     3、边框的宽度：border-image-width；    
     4、图片的排列方式：border-image-repeat。
     
-*border-image-source    
+* border-image-source    
 >语法：    
 >border-image-source:url(image url);/*image url可以是相对地址也可以是绝对地址*/    
           
