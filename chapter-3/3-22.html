@@ -1,23 +1,157 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>图片内阴影效果</title>
-  <style type="text/css">
-    .box-shadow {
-      display: inline-block;
-      box-shadow: inset 5px 5px 10px #06c;
-    }
-    img {
-      position:relative;
-      z-index: -1;
-      vertical-align: top;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>图片内阴影效果</title>
+    <style type="text/css">
+        .box-shadow {
+            display: inline-block;
+            box-shadow: inset 5px 5px 10px #06c;
+        }
+
+        img {
+            position: relative;
+            z-index: -1;
+            vertical-align: top;
+        }
+
+        /*box-shadow的内阴影使用在图片“img”元素上是没有任何效果的*/
+        .demo {
+            width: 200px;
+            border: 1px solid #ccc;
+            box-shadow: inset 5px 5px 10px #06c;
+        }
+
+        .shadow {
+            position: relative;
+            display: inline-block;
+            *display: inline;
+        }
+
+        .shadow::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -moz-box-shadow: inset 0 0 5px 1px red;
+            -webkit-box-shadow: inset 0 0 5px 1px red;
+            box-shadow: inset 0 0 5px 1px red;
+        }
+
+        .demo2 {
+            width: 200px;
+            height: 217.6px;
+            border: 1px solid #ccc;
+            box-shadow: inset 5px 5px 10px #06c;
+            background-image: url("border.jpg");
+            background-size: contain;
+        }
+
+        .drop-shadow {
+            width: 300px;
+            height: 150px;
+            position: relative;
+            background: #ccc;
+        }
+        /*添加before, after伪类*/
+        .drop-shadow:before,
+        .drop-shadow:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            height: 20%;
+        }
+        /*添加阴影效果*/
+        .drop-shadow:before,
+        .drop-shadow:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            height: 20%;
+            /*add box-shadow*/
+            -webkit-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            -moz-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+        }
+        /*添加反转效果*/
+        .drop-shadow:before,
+        .drop-shadow:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            height: 20%;
+            /*add box-shadow*/
+            -webkit-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            -moz-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            /*add css3 transform*/
+            -webkit-transform: rotate(-3deg);
+            -moz-transform: rotate(-3deg);
+            -o-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+        }
+
+        /*最终版*/
+        .drop-shadow {
+            width: 300px;
+            height: 150px;
+            position: relative;
+            background: #ccc;
+            margin-left: 100px;
+        }
+
+        .drop-shadow:before,
+        .drop-shadow:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            bottom: 15px;
+            left: 10px;
+            width: 50%;
+            max-width: 150px;
+            height: 20%;
+            /*add box-shadow*/
+            -webkit-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            -moz-box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            box-shadow: 0 15px 10px rgba(125,125,125,0.8);
+            /*add css3 transform*/
+            -webkit-transform: rotate(-3deg);
+            -moz-transform: rotate(-3deg);
+            -o-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+        }
+
+        .drop-shadow:after {
+            right:10px;
+            left: auto;
+            -webkit-transform:rotate(3deg);
+            -moz-transform:rotate(3deg);
+            -o-transform:rotate(3deg);
+            transform:rotate(3deg);
+        }
+
+    </style>
 </head>
 <body>
 <div class="box-shadow">
-	<img src="border.jpg" alt="" width="200" />
- </div>
+    <img src="border.jpg" alt="" width="200"/>
+</div>
+
+<div class="shadow"><img src="border.jpg" alt="box shadow img" width="200"/></div>
+
+<img src="border.jpg" class="demo">
+
+<div class="demo2"></div>
+<br>
+<div class="drop-shadow">drop shadow effect</div>
 </body>
 </html>

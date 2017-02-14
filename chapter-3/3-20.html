@@ -1,32 +1,50 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>border与box-shadow</title>
-  <style type="text/css">
-   .box {
-    width: 200px;
-    height: 100px;
-    text-align: center;
-    line-height: 100px;
-    float: left;
-    margin: 30px;
-   }
-   .border{
-    border: 10px solid red;
-   }
-   .box-shadow {
-    box-shadow: 0 0 0 10px red;
-   }
-	  /*
-	  box-shadown 不会影响页面的任何布局，div.border元素的边框被计算了，宽度，但是div.box-shadow的阴影被浏览器忽略不计，
-	  所以借助box-shadow属性的这个特征，box-shadow用来模拟元素的边框效果可以自由地使用，但必须注意其层级关系。
+    <meta charset="UTF-8">
+    <title>border与box-shadow</title>
+    <style type="text/css">
+        .box {
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+            float: left;
+            margin: 30px;
+        }
 
-	  */
-  </style>
+        .border {
+            border: 10px solid red;
+        }
+
+        .box-shadow {
+            box-shadow: 0 0 0 10px red;
+        }
+
+        /*
+        box-shadown 不会影响页面的任何布局，div.border元素的边框被计算了，宽度，但是div.box-shadow的阴影被浏览器忽略不计，
+        所以借助box-shadow属性的这个特征，box-shadow用来模拟元素的边框效果可以自由地使用，但必须注意其层级关系。
+        */
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            border: 12px solid blue;
+            background-color: orange;
+            border-top-left-radius: 60px 90px;
+            border-bottom-right-radius: 60px 90px;
+            box-shadow: 64px 64px 24px 40px rgba(0, 0, 0, 0.4),
+             inset 12px 12px 0px 18px rgba(0, 0, 0, 0.4);
+        }
+        br{
+            clear: both;
+        }
+    </style>
 </head>
 <body>
-	<div class="box border">Border</div>
-	<div class="box box-shadow">Box-shadow</div>
+<div class="box border">Border</div>
+<div class="box box-shadow">Box-shadow</div>
+<br>
+<div class="demo"></div>
 </body>
 </html>

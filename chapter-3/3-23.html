@@ -4,13 +4,19 @@
 	<meta charset="UTF-8">
 	<title>box-shadow多层阴影效果</title>
   <style type="text/css">
-	  /*box-shadow可以多层阴影同时使用，每层阴影之间使用逗号“,”隔开*/
+
     .box-shadow {
       width: 200px;
       height: 100px;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      box-shadow: -5px 0 5px red, 0 5px 5px blue, 5px 0 5px green, 0 -5px 5px orange;
+      border-radius:30px;
+      box-shadow:0 0 0 1px red,
+					0 0 0 5px blue,
+					0 0 0 8px green,
+					0 0 0 12px yellow,
+					0 0 0 16px orange,
+					0 0 0 20px #06c,
+					0 0 0 24px lime;
     }
   </style>
 </head>
