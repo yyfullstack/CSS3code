@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>border-image的水平stretch效果</title>
   <style type="text/css">
-    .border-image {
+/*    .border-image {
       width: 150px;
       height: 100px;
       border: 27px solid;
@@ -13,7 +13,36 @@
       -o-border-image: url(border.png) 27 stretch stretch;
       -ms-border-image: url(border.png) 27 stretch stretch;
       border-image: url(border.png) 27 stretch stretch;
-    }
+    }*/
+
+	/*Repeat 效果
+	repeat就不一样了，他不管什么适合不适合，直接居中重复，我个人认为repeat是边框中间向两端重复
+	*/
+	.border-image {
+		width: 150px;
+		height: 100px;
+		border: 27px solid;
+		-webkit-border-image: url(border.png) 27 repeat;
+		-moz-border-image: url(border.png) 27 repeat;
+		-o-border-image: url(border.png) 27 repeat;
+		-ms-border-image: url(border.png) 27 repeat;
+		border-image: url(border.png) 27 repeat;
+	}
+
+	  /*
+	  Round 效果：
+	  round会压缩或伸展border-image的背景图片以其刚好适应border-width的宽度
+	  */
+.border-image {
+	width: 150px;
+	height: 100px;
+	border: 27px solid;
+	-webkit-border-image: url(border.png) 27 round;
+	-moz-border-image: url(border.png) 27 round;
+	-o-border-image: url(border.png) 27 round;
+	-ms-border-image: url(border.png) 27 round;
+	border-image: url(border.png) 27 round;
+}
   </style>
 </head>
 <body>

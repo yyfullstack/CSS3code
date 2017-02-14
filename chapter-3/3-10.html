@@ -1,18 +1,87 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>CSS3的border-radius制作圆角</title>
-  <style type="text/css">
-    .border-radius {
-      width: 350px;
-      height: 100px;
-      border: 10px solid orange;
-      border-radius: 10px  20px  30px  40px / 40px 30px 20px 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>CSS3的border-radius制作圆角</title>
+    <style type="text/css">
+        /*.border-radius {
+          width: 350px;
+          height: 100px;
+          border: 10px solid orange;
+          border-radius: 10px  20px  30px  40px / 40px 30px 20px 10px;
+        }*/
+
+        /*
+            border-radius只设置一个值
+            元素的四个角具有圆角，而且圆半径值一样，
+        */
+        .border-radius {
+            width: 350px;
+            height: 100px;
+            border: 10px solid orange;
+            border-radius: 10px;
+        }
+
+        /*
+          border-radius设置两个值
+          top-left等于bottom-right并且它们取一个值为10px，
+          top-right等于bottom-left并且它们取一个值为30px，
+      */
+        .border-radius {
+            width: 350px;
+            height: 100px;
+            border: 10px solid orange;
+            border-radius: 10px 30px;
+        }
+
+        /*
+            border-radius设置三个值
+            top-left取第一个值为10px，
+            top-right等于bottom-left并且它们第二个值为50px，
+            bottom-right取第三个值30px
+         */
+        .border-radius {
+            width: 350px;
+            height: 100px;
+            border: 10px solid orange;
+            border-radius: 10px 50px 30px;
+        }
+
+        /*
+        border-radius设置四个值
+        top-left取第一个值为10px，
+        top-right取第二个值为20px，
+        bottom-right取第三个值30px
+        bottom-left取第四个值40px
+        */
+        .border-radius {
+            width: 350px;
+            height: 100px;
+            border: 10px solid orange;
+            border-radius: 10px 20px 30px 40px;
+        }
+
+        /*
+            border-radius: 水平 / 垂直：只设置一个水平和一个垂直半径时，那么水平半径分别指定了元素个四个角的水平半径值，
+            同样垂直半径指定了元素的垂直半径值
+            只有水平和垂直半径值相同时，他们才具有四分之一圆特性，这样一来，我们可以改变不同的半径值，
+            制作一些特殊的图形效果，感兴趣的朋友可以自己在本地尝试一下各种不同的设置方式。
+        */
+        .border-radius {
+            width: 350px;
+            height: 100px;
+            border: 10px solid orange;
+            border-radius: 10px / 20px;
+        }
+
+        /*
+            border-radius: 水平1 水平2 / 垂直1  垂直2：设置了两个水平值和两个垂直值，此时我们top-left和bottom-right
+            具有相同的水平和垂直半径，也就是其中的水平1和垂直1；而top-right和bottom-left也具有相同的水平和垂直半径值，
+            也就是水平2和垂直2
+       */
+    </style>
 </head>
 <body>
-	<div class="border-radius"></div>
+<div class="border-radius"></div>
 </body>
 </html>

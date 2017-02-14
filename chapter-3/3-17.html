@@ -1,34 +1,53 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>box-shadow设置单边阴影效果</title>
-  <style type="text/css">
-    .box-shadow {
-      width: 200px;
-      height: 100px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      margin: 20px;
-    }
-    .top {
-      box-shadow: 0 -4px 5px -3px red;
-    }
-    .right {
-      box-shadow: 4px 0 5px -3px green;
-    }
-    .bottom {
-      box-shadow: 0 4px 5px -3px blue;
-    }
-    .left {
-      box-shadow: -4px 0 5px -3px orange;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>box-shadow设置单边阴影效果</title>
+    <style type="text/css">
+        .box-shadow {
+            width: 200px;
+            height: 100px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 20px;
+        }
+
+        /*box-shadow 添加了5px阴影模糊半径后，阴影不再是实影投影，阴影清晰度向外扩散，更具阴影的效果，
+        但造成了问题，给元素其他三个边加上淡淡的阴影效果，这个不是设计需要的效果*/
+        .top {
+            box-shadow: 0 -2px 5px red;
+        }
+
+        .right {
+            box-shadow: 2px 0 5px green;
+        }
+
+        .bottom {
+            box-shadow: 0 2px 5px blue;
+        }
+
+        .left {
+            box-shadow: -2px 0 5px orange;
+        }
+
+        /*.top {
+          box-shadow: 0 -4px 5px -3px red;
+        }
+        .right {
+          box-shadow: 4px 0 5px -3px green;
+        }
+        .bottom {
+          box-shadow: 0 4px 5px -3px blue;
+        }
+        .left {
+          box-shadow: -4px 0 5px -3px orange;
+        }*/
+    </style>
 </head>
 <body>
-	<div class="box-shadow top"></div>
-	<div class="box-shadow right"></div>
-	<div class="box-shadow bottom"></div>
-	<div class="box-shadow left"></div>
+<div class="box-shadow top"></div>
+<div class="box-shadow right"></div>
+<div class="box-shadow bottom"></div>
+<div class="box-shadow left"></div>
 </body>
 </html>

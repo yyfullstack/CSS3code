@@ -1,21 +1,57 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>box-shadow设置四边相同的阴影效果</title>
-  <style type="text/css">
-    .box-shadow{
-      width: 200px;
-      height: 100px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      margin: 20px;
-      box-shadow: 0 0 10px  -10px #06c;
-    }
-   
-  </style>
+    <meta charset="UTF-8">
+    <title>box-shadow设置四边相同的阴影效果</title>
+    <style type="text/css">
+
+
+        /*只设置阴影模糊半径和阴影颜色*/
+        .box-shadow {
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            box-shadow: 0 0 10px #06c;
+        }
+
+        /*box-shadow扩张半径还可以控制阴影深度，如果去正值将加深阴影的深度，
+        如果去负值可以向内压缩阴影直到扩张半径等于模糊半径时，阴影会全部消失*/
+        .box-shadow {
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            box-shadow: 0 0 10px 10px #06c;
+        }
+
+        .box-shadow {
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            box-shadow: 0 0 10px -10px #06c;
+        }
+
+        /*只设置扩张半径和阴影颜色
+        box-shadow制作的阴影效果和元素的设置“10px”实线边框一样
+        border:10px solid #06c;
+        */
+        .box-shadow {
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            margin: 20px;
+            box-shadow: 0 0 0 10px #06c;
+        }
+
+    </style>
 </head>
 <body>
-	<div class="box-shadow"></div>
+<div class="box-shadow"></div>
 </body>
 </html>

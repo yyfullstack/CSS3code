@@ -1,16 +1,45 @@
 ﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<title>图片上的圆角应用</title>
-  <style type="text/css">
-    img {
-      border: 5px solid red;
-      border-radius: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>图片上的圆角应用</title>
+    <style type="text/css">
+
+        img {
+            border: 5px solid red;
+            border-radius: 10px;
+        }
+
+        /*我们边框内部就不具有圆角效果*/
+        .demo1 {
+            width: 350px;
+            height: 100px;
+            border: 15px solid green;
+            border-radius: 15px;
+        }
+
+        .demo2 {
+            width: 350px;
+            height: 100px;
+            border: 30px solid green;
+            border-width: 20px 5px 30px 60px;
+            border-radius: 100px;
+        }
+
+        .demo3 {
+            width: 350px;
+            height: 100px;
+            border: 30px solid orange;
+            border-width: 35px 35px 60px 30px;
+            border-color:orange red green blue;
+            border-radius: 80px;
+        }
+    </style>
 </head>
 <body>
-	<img src="border.jpg" alt=""  width="150"  height="150" />
+<img src="border.jpg" alt="" width="150" height="150"/>
+<div class="demo1"></div><br/>
+<div class="demo2"></div><br/>
+<div class="demo3"></div>
 </body>
 </html>

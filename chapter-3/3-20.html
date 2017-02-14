@@ -18,6 +18,11 @@
    .box-shadow {
     box-shadow: 0 0 0 10px red;
    }
+	  /*
+	  box-shadown 不会影响页面的任何布局，div.border元素的边框被计算了，宽度，但是div.box-shadow的阴影被浏览器忽略不计，
+	  所以借助box-shadow属性的这个特征，box-shadow用来模拟元素的边框效果可以自由地使用，但必须注意其层级关系。
+
+	  */
   </style>
 </head>
 <body>
