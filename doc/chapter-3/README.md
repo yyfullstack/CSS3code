@@ -168,4 +168,4 @@ border-radius能应用在各种元素中，但在img和table应用时会有点�
     safari和chrome浏览器将无色，也就是透明，建议不要省略此参数
 
 #####3.5.2 box-shadow属性的使用方法
-    ![box-shadow工作方式](box-shadow-work.png "box-shadow工作方式")
+![box-shadow工作方式](box-shadow-work.png "box-shadow工作方式")
